@@ -6,6 +6,7 @@
     <title>PathCoreAI — Smart Software Solutions</title>
     <meta name="description" content="PathCoreAI builds intelligent software solutions — mobile apps, web applications, websites, and custom software. Privacy-first, high-quality products powered by AI.">
     <meta name="keywords" content="PathCoreAI, Android apps, mobile apps, web apps, web development, websites, software development, custom software, landing pages, SaaS, AI apps, Google Play, privacy first, تطبيقات ذكية, تطوير مواقع, تطبيقات ويب, برمجيات مخصصة">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="PathCoreAI — Smart Software Solutions">
     <meta property="og:description" content="Intelligent, privacy-first software solutions — mobile apps, web applications, websites, and custom software powered by modern technology.">
     <meta property="og:type" content="website">
@@ -21,6 +22,9 @@
     <meta name="twitter:description" content="Privacy-first software solutions — mobile apps, web apps, websites & custom software powered by AI. Built in Egypt.">
     <meta name="twitter:image" content="https://pathcoreai.com/og-image.svg">
     <link rel="canonical" href="https://pathcoreai.com">
+    <link rel="alternate" hreflang="en" href="https://pathcoreai.com/">
+    <link rel="alternate" hreflang="ar" href="https://pathcoreai.com/">
+    <link rel="alternate" hreflang="x-default" href="https://pathcoreai.com/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="manifest" href="manifest.json">
@@ -34,7 +38,7 @@
         "url": "https://pathcoreai.com",
         "logo": "https://pathcoreai.com/favicon.svg",
         "description": "Independent software studio building intelligent, privacy-first mobile apps, web applications, websites, and custom software solutions.",
-        "foundingDate": "2025",
+        "foundingDate": "2026",
         "foundingLocation": {
             "@type": "Place",
             "name": "Egypt"
@@ -818,7 +822,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
@@ -946,6 +950,7 @@
             .emblem-text { font-size: 1.6rem; }
             .about-grid { grid-template-columns: 1fr; }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
             .app-card { grid-template-columns: 1fr; text-align: center; }
             .app-visual { margin-top: 2rem; }
             .hero-overline { justify-content: center; }
@@ -1213,6 +1218,32 @@
             .notify-submit { padding: 0.85rem; }
             .app-features { justify-content: center; }
         }
+
+        @media (max-width: 480px) {
+            .hero { padding: 6rem 1rem 3rem; }
+            .hero-title { font-size: clamp(2rem, 7vw, 2.8rem); }
+            .about-section, .apps-section { padding: 3.5rem 1rem; }
+            .features-section, .contact-section { padding: 3.5rem 1rem; }
+            .about-stats { grid-template-columns: 1fr; }
+            .app-card { padding: 1.5rem; }
+            .phone-mockup { width: 180px; height: 360px; }
+            .hero-emblem { width: 200px; height: 200px; }
+            .emblem-ring-inner { inset: 25px; }
+            .emblem-core { inset: 50px; }
+            .emblem-text { font-size: 1.3rem; }
+            footer { padding: 2rem 1rem; }
+            .footer-links { flex-wrap: wrap; gap: 1rem; }
+            .btn { padding: 0.75rem 1.5rem; font-size: 0.85rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1236,7 +1267,7 @@
             <li><a href="#features" data-en="Features" data-ar="المميزات">Features</a></li>
             <li><a href="#apps" data-en="Apps" data-ar="التطبيقات">Apps</a></li>
             <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
-            <li><a href="https://github.com/PathCoreAI" target="_blank" class="nav-cta" data-en="GitHub" data-ar="GitHub">GitHub</a></li>
+            <li><a href="https://github.com/PathCoreAI" target="_blank" rel="noopener noreferrer" class="nav-cta" data-en="GitHub" data-ar="GitHub">GitHub</a></li>
             <li>
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
@@ -1259,7 +1290,7 @@
                 </h1>
                 <p class="hero-desc" data-en="Privacy-first mobile apps, web applications, websites, and custom software powered by AI. Every product is crafted to deliver real value with a refined, intuitive experience." data-ar="تطبيقات موبايل ومواقع إلكترونية وتطبيقات ويب وبرمجيات مخصصة تحترم خصوصيتك ومدعومة بالذكاء الاصطناعي. كل منتج مصمّم ليقدّم قيمة حقيقية بتجربة أنيقة وبديهية.">Privacy-first mobile apps, web applications, websites, and custom software powered by AI. Every product is crafted to deliver real value with a refined, intuitive experience.</p>
                 <div class="hero-actions">
-                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" class="btn btn-gold" target="_blank" data-en="View on Google Play" data-ar="شاهد على Google Play">View on Google Play</a>
+                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" class="btn btn-gold" target="_blank" rel="noopener noreferrer" data-en="View on Google Play" data-ar="شاهد على Google Play">View on Google Play</a>
                     <a href="#contact" class="btn btn-ghost" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</a>
                 </div>
             </div>
@@ -1446,12 +1477,12 @@
                 <div class="contact-card">
                     <div class="contact-icon">&#9654;</div>
                     <div class="contact-label" data-en="Google Play" data-ar="Google Play">Google Play</div>
-                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" data-en="View Our Apps" data-ar="شاهد تطبيقاتنا">View Our Apps</a>
+                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" rel="noopener noreferrer" data-en="View Our Apps" data-ar="شاهد تطبيقاتنا">View Our Apps</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">✱</div>
                     <div class="contact-label" data-en="GitHub" data-ar="GitHub">GitHub</div>
-                    <a href="https://github.com/PathCoreAI" target="_blank" data-en="View Our Code" data-ar="شاهد أعمالنا">View Our Code</a>
+                    <a href="https://github.com/PathCoreAI" target="_blank" rel="noopener noreferrer" data-en="View Our Code" data-ar="شاهد أعمالنا">View Our Code</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">&#127760;</div>
@@ -1460,10 +1491,10 @@
                 </div>
             </div>
             <div class="social-row reveal">
-                <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" class="social-link" aria-label="Google Play" title="Google Play">
+                <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Play" title="Google Play">
                     <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.991l-2.302 2.302L6.864 2.658zm12.8 4.154l2.478 1.434c.764.441.764 1.067 0 1.508l-2.478 1.434L16.2 12l2.464-5.188z"/></svg>
                 </a>
-                <a href="https://github.com/PathCoreAI" target="_blank" class="social-link" aria-label="GitHub" title="GitHub">
+                <a href="https://github.com/PathCoreAI" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="GitHub">
                     <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 </a>
                 <a href="mailto:contact@pathcoreai.com" class="social-link" aria-label="Email" title="Email">
@@ -1491,8 +1522,8 @@
             <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
             <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
             <a href="mailto:contact@pathcoreai.com" data-en="Contact" data-ar="تواصل">Contact</a>
-            <a href="https://github.com/PathCoreAI" target="_blank">GitHub</a>
-            <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank">Google Play</a>
+            <a href="https://github.com/PathCoreAI" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" rel="noopener noreferrer">Google Play</a>
         </div>
     </footer>
 
