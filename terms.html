@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — PathCoreAI</title>
+    <meta name="description" content="PathCoreAI Terms of Service. Read our terms and conditions for using our applications.">
+    <meta property="og:title" content="Terms of Service — PathCoreAI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pathcoreai.com/terms.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e4c96a;
+            --gold-dim: rgba(201, 168, 76, 0.15);
+            --sage: #6b9080;
+            --bg: #07090f;
+            --bg-elevated: #0d1117;
+            --bg-card: #12161f;
+            --text: #d4d0c8;
+            --text-bright: #f0ede6;
+            --text-muted: #7a7668;
+            --border: #1e2330;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        [dir="rtl"] body { font-family: var(--font-arabic); }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.5rem;
+            z-index: 1100;
+            display: flex;
+            background: rgba(18, 22, 31, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        [dir="rtl"] .lang-switch { right: auto; left: 1.5rem; }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.5rem 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            font-family: var(--font-body);
+        }
+        .lang-btn.active { color: var(--gold); background: var(--gold-dim); }
+        .lang-divider { width: 1px; height: 18px; background: var(--border); align-self: center; }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 9, 15, 0.92);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--gold); }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        .nav-back:hover { color: var(--gold); }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        [dir="rtl"] .page-title { font-family: var(--font-arabic); letter-spacing: 0; }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .page-intro {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        [dir="rtl"] .section h2 { font-family: var(--font-arabic); flex-direction: row-reverse; }
+
+        .section h2::before {
+            content: '';
+            width: 3px;
+            height: 1.2rem;
+            background: var(--gold);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .section p, .section li {
+            color: var(--text);
+            margin-bottom: 0.7rem;
+            line-height: 1.9;
+            font-size: 0.92rem;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        [dir="rtl"] .section ul { margin-left: 0; margin-right: 1.5rem; }
+
+        .section strong { color: var(--text-bright); }
+
+        .section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .section a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 0.5rem;
+        }
+        .footer-logo span { color: var(--gold); }
+
+        footer p { color: var(--text-muted); font-size: 0.8rem; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.5rem; }
+            .content { padding: 6rem 1.2rem 3rem; }
+            .page-title { font-size: 2rem; }
+            .lang-switch { top: auto; bottom: 1rem; right: 1rem; }
+            [dir="rtl"] .lang-switch { right: auto; left: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <div class="lang-divider"></div>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">عربي</button>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Path<span>Core</span>AI</a>
+        <a href="index.html" class="nav-back" data-en="← Back to Home" data-ar="→ الرجوع للرئيسية">← Back to Home</a>
+    </nav>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="page-title" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</h1>
+            <p class="page-subtitle" data-en="Last Updated: April 4, 2026" data-ar="آخر تحديث: ٤ أبريل ٢٠٢٦">Last Updated: April 4, 2026</p>
+        </header>
+
+        <p class="page-intro" data-en="By downloading, installing, or using any PathCoreAI application, you agree to these Terms of Service. Please read them carefully." data-ar="بتحميل أو تثبيت أو استخدام أي تطبيق من تطبيقات PathCoreAI، فإنك توافق على شروط الخدمة هذه. يرجى قراءتها بعناية.">By downloading, installing, or using any PathCoreAI application, you agree to these Terms of Service. Please read them carefully.</p>
+
+        <div class="section">
+            <h2 data-en="1. Acceptance of Terms" data-ar="١. قبول الشروط">1. Acceptance of Terms</h2>
+            <p data-en="By accessing or using our applications (&quot;Apps&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Apps." data-ar="باستخدامك لتطبيقاتنا، فإنك توافق على الالتزام بشروط الخدمة هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام تطبيقاتنا.">By accessing or using our applications ("Apps"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Apps.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="2. Use of Our Apps" data-ar="٢. استخدام تطبيقاتنا">2. Use of Our Apps</h2>
+            <p data-en="You agree to use our Apps only for lawful purposes and in accordance with these Terms. You agree not to:" data-ar="توافق على استخدام تطبيقاتنا فقط لأغراض مشروعة ووفقاً لهذه الشروط. توافق على عدم:">You agree to use our Apps only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+            <ul>
+                <li data-en="Use the Apps in any way that violates any applicable law or regulation." data-ar="استخدام التطبيقات بأي طريقة تنتهك أي قانون أو لائحة معمول بها.">Use the Apps in any way that violates any applicable law or regulation.</li>
+                <li data-en="Attempt to gain unauthorized access to any part of the Apps." data-ar="محاولة الحصول على وصول غير مصرح به إلى أي جزء من التطبيقات.">Attempt to gain unauthorized access to any part of the Apps.</li>
+                <li data-en="Use the Apps to transmit any harmful or malicious content." data-ar="استخدام التطبيقات لنقل أي محتوى ضار أو خبيث.">Use the Apps to transmit any harmful or malicious content.</li>
+                <li data-en="Reverse engineer, decompile, or disassemble any part of the Apps." data-ar="عكس هندسة أو تفكيك أو تحليل أي جزء من التطبيقات.">Reverse engineer, decompile, or disassemble any part of the Apps.</li>
+                <li data-en="Use the Apps for any commercial purpose without our written consent." data-ar="استخدام التطبيقات لأي غرض تجاري بدون موافقتنا الكتابية.">Use the Apps for any commercial purpose without our written consent.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="3. Intellectual Property" data-ar="٣. الملكية الفكرية">3. Intellectual Property</h2>
+            <p data-en="All content, features, and functionality of our Apps are owned by PathCoreAI and are protected by international copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our prior written consent." data-ar="جميع المحتويات والميزات والوظائف في تطبيقاتنا مملوكة لـ PathCoreAI ومحمية بموجب قوانين حقوق الطبع والنشر والعلامات التجارية والملكية الفكرية الدولية. لا يجوز لك نسخ أو تعديل أو توزيع أو إنشاء أعمال مشتقة بدون موافقتنا الكتابية المسبقة.">All content, features, and functionality of our Apps are owned by PathCoreAI and are protected by international copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our prior written consent.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="4. User Accounts" data-ar="٤. حسابات المستخدمين">4. User Accounts</h2>
+            <p data-en="Some features may require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account." data-ar="قد تتطلب بعض الميزات إنشاء حساب. أنت مسؤول عن الحفاظ على سرية بيانات اعتماد حسابك وعن جميع الأنشطة التي تحدث تحت حسابك.">Some features may require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="5. In-App Purchases & Subscriptions" data-ar="٥. المشتريات والاشتراكات داخل التطبيق">5. In-App Purchases & Subscriptions</h2>
+            <p data-en="Some Apps may offer in-app purchases or subscriptions. All purchases are final and non-refundable, except as required by applicable law or the app store's refund policy." data-ar="قد تقدم بعض التطبيقات مشتريات أو اشتراكات داخل التطبيق. جميع المشتريات نهائية وغير قابلة للاسترداد، إلا بموجب القانون المعمول به أو سياسة استرداد متجر التطبيقات.">Some Apps may offer in-app purchases or subscriptions. All purchases are final and non-refundable, except as required by applicable law or the app store's refund policy.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="6. Advertisements" data-ar="٦. الإعلانات">6. Advertisements</h2>
+            <p data-en="Our free Apps may display advertisements provided by third-party ad networks. These ad networks may collect information as described in our Privacy Policy." data-ar="قد تعرض تطبيقاتنا المجانية إعلانات مقدمة من شبكات إعلانية تابعة لطرف ثالث. قد تجمع هذه الشبكات معلومات كما هو موضح في سياسة الخصوصية الخاصة بنا.">Our free Apps may display advertisements provided by third-party ad networks. These ad networks may collect information as described in our <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="7. Disclaimer of Warranties" data-ar="٧. إخلاء المسؤولية عن الضمانات">7. Disclaimer of Warranties</h2>
+            <p data-en="Our Apps are provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind, either express or implied. We do not guarantee that the Apps will be uninterrupted, error-free, or free of viruses or other harmful components." data-ar="تُقدم تطبيقاتنا &quot;كما هي&quot; و&quot;حسب التوفر&quot; بدون ضمانات من أي نوع، سواء كانت صريحة أو ضمنية. لا نضمن أن التطبيقات ستعمل بدون انقطاع أو أخطاء أو خلوها من الفيروسات أو المكونات الضارة الأخرى.">Our Apps are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the Apps will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="8. Limitation of Liability" data-ar="٨. تحديد المسؤولية">8. Limitation of Liability</h2>
+            <p data-en="To the maximum extent permitted by law, PathCoreAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our Apps." data-ar="إلى أقصى حد يسمح به القانون، لن تكون PathCoreAI مسؤولة عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية ناشئة عن أو متعلقة باستخدامك لتطبيقاتنا.">To the maximum extent permitted by law, PathCoreAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our Apps.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="9. Changes to Terms" data-ar="٩. التغييرات على الشروط">9. Changes to Terms</h2>
+            <p data-en="We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. Your continued use of the Apps after changes constitutes acceptance of the new Terms." data-ar="نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنخطرك بأي تغييرات عن طريق نشر الشروط الجديدة على هذه الصفحة. استمرارك في استخدام التطبيقات بعد التغييرات يعني قبولك للشروط الجديدة.">We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. Your continued use of the Apps after changes constitutes acceptance of the new Terms.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="10. Governing Law" data-ar="١٠. القانون الحاكم">10. Governing Law</h2>
+            <p data-en="These Terms shall be governed by and construed in accordance with the laws of the Arab Republic of Egypt, without regard to its conflict of law provisions." data-ar="تخضع هذه الشروط وتُفسر وفقاً لقوانين جمهورية مصر العربية، بغض النظر عن أحكام تعارض القوانين.">These Terms shall be governed by and construed in accordance with the laws of the Arab Republic of Egypt, without regard to its conflict of law provisions.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="11. Contact Us" data-ar="١١. تواصل معنا">11. Contact Us</h2>
+            <p data-en="If you have any questions about these Terms of Service, please contact us:" data-ar="إذا كانت لديك أي أسئلة حول شروط الخدمة هذه، يرجى التواصل معنا:">If you have any questions about these Terms of Service, please contact us:</p>
+            <p><strong>PathCoreAI</strong></p>
+            <p><span data-en="Email:" data-ar="البريد الإلكتروني:">Email:</span> <a href="mailto:contact@pathcoreai.com">contact@pathcoreai.com</a></p>
+            <p><span data-en="Website:" data-ar="الموقع:">Website:</span> <a href="https://pathcoreai.com">pathcoreai.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">Path<span>Core</span>AI</div>
+        <p>&copy; 2026 PathCoreAI. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+        <div class="footer-links">
+            <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                if (!el.querySelector('[data-en]')) el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.title = lang === 'ar' ? 'شروط الخدمة — PathCoreAI' : 'Terms of Service — PathCoreAI';
+            localStorage.setItem('pathcoreai-lang', lang);
+        }
+        const saved = localStorage.getItem('pathcoreai-lang');
+        if (saved) setLang(saved);
+    </script>
+
+</body>
+</html>

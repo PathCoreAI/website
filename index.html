@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathCoreAI — Smart Mobile Apps</title>
+    <meta name="description" content="PathCoreAI builds intelligent mobile applications that solve real problems. Privacy-first, high-quality Android apps on Google Play.">
+    <meta name="keywords" content="PathCoreAI, Android apps, mobile apps, AI apps, Google Play, privacy first, تطبيقات ذكية">
+    <meta property="og:title" content="PathCoreAI — Smart Mobile Apps">
+    <meta property="og:description" content="Intelligent, privacy-first Android applications powered by modern technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pathcoreai.com">
+    <meta property="og:image" content="https://pathcoreai.com/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_EG">
+    <meta property="og:site_name" content="PathCoreAI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PathCoreAI — Smart Mobile Apps">
+    <meta name="twitter:description" content="Privacy-first Android applications powered by AI. Built in Egypt.">
+    <meta name="twitter:image" content="https://pathcoreai.com/og-image.svg">
+    <link rel="canonical" href="https://pathcoreai.com">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c9a84c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PathCoreAI",
+        "url": "https://pathcoreai.com",
+        "logo": "https://pathcoreai.com/favicon.svg",
+        "description": "Independent app studio building intelligent, privacy-first mobile applications.",
+        "foundingDate": "2025",
+        "foundingLocation": {
+            "@type": "Place",
+            "name": "Egypt"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@pathcoreai.com",
+            "contactType": "customer service"
+        },
+        "sameAs": [
+            "https://play.google.com/store/apps/dev?id=8530664071448363917"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PathCoreAI",
+        "url": "https://pathcoreai.com",
+        "inLanguage": ["en", "ar"]
+    }
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHV7DRYR7V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JHV7DRYR7V');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e4c96a;
+            --gold-dim: rgba(201, 168, 76, 0.15);
+            --sage: #6b9080;
+            --sage-dim: rgba(107, 144, 128, 0.12);
+            --bg: #07090f;
+            --bg-elevated: #0d1117;
+            --bg-card: #12161f;
+            --bg-card-hover: #181d28;
+            --surface: #1a1f2b;
+            --text: #d4d0c8;
+            --text-bright: #f0ede6;
+            --text-muted: #7a7668;
+            --border: #1e2330;
+            --border-hover: #2a3040;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        [dir="rtl"] body {
+            font-family: var(--font-arabic);
+        }
+
+        /* ===== NOISE TEXTURE OVERLAY ===== */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* ===== LANGUAGE SWITCHER ===== */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: rgba(18, 22, 31, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-left: 0.5rem;
+        }
+
+        [dir="rtl"] .lang-switch {
+            margin-left: 0;
+            margin-right: 0.5rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.5rem 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            font-family: var(--font-body);
+        }
+
+        .lang-btn.active {
+            color: var(--gold);
+            background: var(--gold-dim);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text);
+        }
+
+        .lang-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--border);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1.3rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s var(--ease);
+        }
+
+        .navbar.scrolled {
+            background: rgba(7, 9, 15, 0.92);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 3rem;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover { color: var(--text-bright); }
+
+        .nav-cta {
+            background: transparent !important;
+            color: var(--gold) !important;
+            padding: 0.45rem 1.2rem;
+            border: 1.5px solid var(--gold);
+            border-radius: 6px;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            transition: all 0.3s var(--ease) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold) !important;
+            color: var(--bg) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 3rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(107, 144, 128, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content { max-width: 600px; }
+
+        .hero-overline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: slideUp 0.8s var(--ease) 0.1s forwards;
+        }
+
+        .hero-overline::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 800;
+            color: var(--text-bright);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: slideUp 0.8s var(--ease) 0.2s forwards;
+        }
+
+        [dir="rtl"] .hero-title {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            line-height: 1.3;
+        }
+
+        .hero-title .accent {
+            color: var(--gold);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            opacity: 0;
+            animation: slideUp 0.8s var(--ease) 0.35s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 0.8s var(--ease) 0.5s forwards;
+        }
+
+        .btn {
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.35s var(--ease);
+            letter-spacing: 0.3px;
+            font-family: var(--font-body);
+        }
+
+        [dir="rtl"] .btn { font-family: var(--font-arabic); }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--bg);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.25);
+        }
+
+        .btn-ghost {
+            border: 1.5px solid var(--border-hover);
+            color: var(--text);
+            background: transparent;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--text-muted);
+            color: var(--text-bright);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.2s var(--ease) 0.6s forwards;
+        }
+
+        .hero-emblem {
+            width: 320px;
+            height: 320px;
+            position: relative;
+        }
+
+        .emblem-ring {
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            animation: spin 40s linear infinite;
+        }
+
+        .emblem-ring::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .emblem-ring-inner {
+            position: absolute;
+            inset: 40px;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 50%;
+            animation: spin 30s linear infinite reverse;
+        }
+
+        .emblem-ring-inner::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: var(--sage);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .emblem-core {
+            position: absolute;
+            inset: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+        }
+
+        .emblem-text {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -1px;
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-section {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+            overflow: hidden;
+            background: var(--bg-elevated);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 3rem;
+            animation: marquee 25s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .marquee-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 7rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-overline {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-overline::before {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: var(--text-bright);
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+        }
+
+        [dir="rtl"] .section-title {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            line-height: 1.4;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+
+        .about-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.4s var(--ease);
+        }
+
+        .stat-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== FEATURES ===== */
+        .features-section {
+            padding: 7rem 3rem;
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2.2rem;
+            transition: all 0.4s var(--ease);
+            position: relative;
+        }
+
+        .feature-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .feature-card:hover .feature-num {
+            color: var(--gold);
+        }
+
+        .feature-num {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.3px;
+        }
+
+        [dir="rtl"] .feature-card h3 {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* ===== APPS SECTION ===== */
+        .apps-section {
+            padding: 7rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        [dir="rtl"] .app-card::before {
+            right: auto;
+            left: 0;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--sage-dim);
+            border: 1px solid rgba(107, 144, 128, 0.2);
+            color: var(--sage);
+            padding: 0.3rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-badge .pulse {
+            width: 6px;
+            height: 6px;
+            background: var(--sage);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        .app-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        [dir="rtl"] .app-info h3 {
+            font-family: var(--font-arabic);
+            letter-spacing: 0;
+            line-height: 1.4;
+        }
+
+        .app-info p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-notify {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .app-notify a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .app-notify a:hover { border-bottom-color: var(--gold); }
+
+        .app-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phone-mockup {
+            width: 220px;
+            height: 440px;
+            background: var(--surface);
+            border: 2px solid var(--border-hover);
+            border-radius: 32px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 22px;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+
+        .phone-screen {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            padding: 7rem 3rem;
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.35s var(--ease);
+        }
+
+        .contact-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover { color: var(--gold-light); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-logo span { color: var(--gold); }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero-desc { margin: 0 auto 2.5rem; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { margin-top: 2rem; }
+            .hero-emblem { width: 240px; height: 240px; }
+            .emblem-ring-inner { inset: 30px; }
+            .emblem-core { inset: 60px; }
+            .emblem-text { font-size: 1.6rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .app-card { grid-template-columns: 1fr; text-align: center; }
+            .app-visual { margin-top: 2rem; }
+            .hero-overline { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.5rem; }
+            .navbar.scrolled { padding: 0.8rem 1.5rem; }
+            .hero { padding: 7rem 1.5rem 4rem; }
+            .about-section, .apps-section { padding: 5rem 1.5rem; }
+            .features-section, .contact-section { padding: 5rem 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: rgba(7, 9, 15, 0.98);
+                backdrop-filter: blur(20px);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                gap: 1rem;
+            }
+            .app-card { padding: 2rem; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+            .lang-switch { margin-left: 0; margin-top: 0.5rem; align-self: center; }
+        }
+
+        /* ===== RTL ADJUSTMENTS ===== */
+        [dir="rtl"] .hero-overline::before,
+        [dir="rtl"] .section-overline::before {
+            order: 1;
+        }
+
+        [dir="rtl"] .hero-overline,
+        [dir="rtl"] .section-overline {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .nav-links { direction: rtl; }
+
+        /* ===== LOGO MARK ===== */
+        .nav-logo-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            margin-right: 0.6rem;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        [dir="rtl"] .nav-logo-mark {
+            margin-right: 0;
+            margin-left: 0.6rem;
+        }
+
+        /* ===== FOUNDER CARD ===== */
+        .founder-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem 2.2rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.4s var(--ease);
+        }
+
+        .founder-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .founder-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gold-dim);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .founder-info {
+            flex: 1;
+        }
+
+        .founder-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-bright);
+            margin-bottom: 0.2rem;
+        }
+
+        [dir="rtl"] .founder-name {
+            font-family: var(--font-arabic);
+        }
+
+        .founder-role {
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== NOTIFICATION FORM ===== */
+        .notify-form {
+            display: flex;
+            gap: 0;
+            margin-top: 1.5rem;
+            max-width: 420px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .notify-form:focus-within {
+            border-color: var(--gold);
+        }
+
+        .notify-input {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            background: var(--surface);
+            border: none;
+            color: var(--text-bright);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            outline: none;
+        }
+
+        [dir="rtl"] .notify-input {
+            font-family: var(--font-arabic);
+        }
+
+        .notify-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .notify-submit {
+            padding: 0.85rem 1.5rem;
+            background: var(--gold);
+            border: none;
+            color: var(--bg);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .notify-submit:hover {
+            background: var(--gold-light);
+        }
+
+        .notify-hint {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+        }
+
+        /* ===== SOCIAL LINKS ===== */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s var(--ease);
+        }
+
+        .social-link:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ===== APP FEATURES LIST ===== */
+        .app-features {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .app-feature-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            padding: 0.35rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .app-feature-tag .tag-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        /* ===== PHONE MOCKUP ENHANCED ===== */
+        .phone-app-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.8rem;
+        }
+
+        .phone-screen-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .phone-screen-sub {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .founder-card { flex-direction: column; text-align: center; }
+            .notify-form { flex-direction: column; }
+            .notify-submit { padding: 0.85rem; }
+            .app-features { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <svg class="nav-logo-mark" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+                <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e4c96a"/><stop offset="100%" stop-color="#c9a84c"/></linearGradient></defs>
+                <circle cx="32" cy="32" r="30" fill="none" stroke="url(#lg)" stroke-width="2" opacity="0.45"/>
+                <circle cx="32" cy="32" r="22" fill="none" stroke="url(#lg)" stroke-width="1.5"/>
+                <circle cx="32" cy="2" r="2.2" fill="#c9a84c"/><circle cx="32" cy="62" r="2.2" fill="#c9a84c"/>
+                <circle cx="2" cy="32" r="2.2" fill="#c9a84c"/><circle cx="62" cy="32" r="2.2" fill="#c9a84c"/>
+                <text x="32" y="43" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="30" fill="url(#lg)">P</text>
+            </svg>
+            Path<span>Core</span>AI
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="#about" data-en="About" data-ar="عنّا">About</a></li>
+            <li><a href="#features" data-en="Features" data-ar="المميزات">Features</a></li>
+            <li><a href="#apps" data-en="Apps" data-ar="التطبيقات">Apps</a></li>
+            <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+            <li><a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" class="nav-cta" data-en="Google Play" data-ar="Google Play">Google Play</a></li>
+            <li>
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                    <div class="lang-divider"></div>
+                    <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">عربي</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-overline" data-en="Independent App Studio" data-ar="استوديو تطبيقات مستقل">Independent App Studio</div>
+                <h1 class="hero-title">
+                    <span data-en="Building" data-ar="نبني">Building</span>
+                    <span class="accent" data-en="Intelligent" data-ar="تطبيقات ذكية">Intelligent</span><br>
+                    <span data-en="Mobile Apps" data-ar="للهواتف المحمولة">Mobile Apps</span>
+                </h1>
+                <p class="hero-desc" data-en="Privacy-first Android applications powered by AI. Every app is crafted to deliver real value with a refined, intuitive experience." data-ar="تطبيقات أندرويد تحترم خصوصيتك ومدعومة بالذكاء الاصطناعي. كل تطبيق مصمّم ليقدّم قيمة حقيقية بتجربة أنيقة وبديهية.">Privacy-first Android applications powered by AI. Every app is crafted to deliver real value with a refined, intuitive experience.</p>
+                <div class="hero-actions">
+                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" class="btn btn-gold" target="_blank" data-en="View on Google Play" data-ar="شاهد على Google Play">View on Google Play</a>
+                    <a href="#contact" class="btn btn-ghost" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-emblem">
+                    <div class="emblem-ring"></div>
+                    <div class="emblem-ring-inner"></div>
+                    <div class="emblem-core">
+                        <span class="emblem-text">P.AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span class="marquee-item">Privacy First <span class="marquee-dot"></span></span>
+            <span class="marquee-item">AI Powered <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Made in Egypt <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Flutter Built <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Lightweight <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Always Improving <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Privacy First <span class="marquee-dot"></span></span>
+            <span class="marquee-item">AI Powered <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Made in Egypt <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Flutter Built <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Lightweight <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Always Improving <span class="marquee-dot"></span></span>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="section-header reveal">
+            <div class="section-overline" data-en="About Us" data-ar="من نحن">About Us</div>
+            <h2 class="section-title" data-en="The Path to Better Apps" data-ar="الطريق نحو تطبيقات أفضل">The Path to Better Apps</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text reveal" data-en="PathCoreAI is an independent app development studio based in Egypt, focused on creating intelligent mobile applications. We believe technology should be &lt;strong&gt;accessible, useful, and respectful&lt;/strong&gt; of user privacy. Our mission is to build apps that make a real difference — from productivity tools to educational apps, all powered by the latest in AI and mobile technology." data-ar="باث كور أيه آي هو استوديو مستقل لتطوير التطبيقات مقره مصر، متخصص في إنشاء تطبيقات ذكية للهواتف المحمولة. نؤمن أن التكنولوجيا يجب أن تكون &lt;strong&gt;متاحة ومفيدة وتحترم&lt;/strong&gt; خصوصية المستخدم. مهمتنا هي بناء تطبيقات تُحدث فرقاً حقيقياً — من أدوات الإنتاجية إلى التطبيقات التعليمية، كلها مدعومة بأحدث تقنيات الذكاء الاصطناعي.">PathCoreAI is an independent app development studio based in Egypt, focused on creating intelligent mobile applications. We believe technology should be <strong>accessible, useful, and respectful</strong> of user privacy. Our mission is to build apps that make a real difference — from productivity tools to educational apps, all powered by the latest in AI and mobile technology.</div>
+            <div class="about-stats reveal">
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label" data-en="Privacy Focused" data-ar="احترام الخصوصية">Privacy Focused</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Flutter</div>
+                    <div class="stat-label" data-en="Cross-Platform" data-ar="متعدد المنصات">Cross-Platform</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">AI</div>
+                    <div class="stat-label" data-en="Powered" data-ar="ذكاء اصطناعي">Powered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" data-en="Egypt" data-ar="مصر">Egypt</div>
+                    <div class="stat-label" data-en="Made With Pride" data-ar="صُنع بفخر">Made With Pride</div>
+                </div>
+            </div>
+            <div class="founder-card reveal">
+                <div class="founder-avatar">H</div>
+                <div class="founder-info">
+                    <div class="founder-name" data-en="Hesham Mostafa" data-ar="هشام مصطفى">Hesham Mostafa</div>
+                    <div class="founder-role" data-en="Founder & Developer" data-ar="المؤسس والمطوّر">Founder & Developer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+        <div class="features-inner">
+            <div class="section-header reveal">
+                <div class="section-overline" data-en="What We Do" data-ar="ما نقدّمه">What We Do</div>
+                <h2 class="section-title" data-en="Built Different. Built Better." data-ar="مبنيّة بشكل مختلف. مبنيّة بشكل أفضل.">Built Different. Built Better.</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-num">01</div>
+                    <h3 data-en="Mobile First" data-ar="الهاتف أولاً">Mobile First</h3>
+                    <p data-en="High-quality Android applications built with Flutter. Fast, responsive, and available on Google Play." data-ar="تطبيقات أندرويد عالية الجودة مبنية بـ Flutter. سريعة ومتجاوبة ومتاحة على Google Play.">High-quality Android applications built with Flutter. Fast, responsive, and available on Google Play.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">02</div>
+                    <h3 data-en="Privacy First" data-ar="الخصوصية أولاً">Privacy First</h3>
+                    <p data-en="Your data belongs to you. Minimal collection, full transparency, GDPR-aligned practices." data-ar="بياناتك ملكك. جمع بيانات محدود وشفافية كاملة وممارسات متوافقة مع GDPR.">Your data belongs to you. Minimal collection, full transparency, GDPR-aligned practices.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">03</div>
+                    <h3 data-en="AI Powered" data-ar="مدعوم بالذكاء الاصطناعي">AI Powered</h3>
+                    <p data-en="Leveraging artificial intelligence to create smarter apps that adapt to your needs." data-ar="نوظّف الذكاء الاصطناعي لإنشاء تطبيقات أذكى تتكيّف مع احتياجاتك.">Leveraging artificial intelligence to create smarter apps that adapt to your needs.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">04</div>
+                    <h3 data-en="Lightweight" data-ar="خفيف الوزن">Lightweight</h3>
+                    <p data-en="Optimized for performance. Runs smoothly even on older devices with limited resources." data-ar="محسّن للأداء. يعمل بسلاسة حتى على الأجهزة القديمة ذات الموارد المحدودة.">Optimized for performance. Runs smoothly even on older devices with limited resources.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">05</div>
+                    <h3 data-en="Made in Egypt" data-ar="صُنع في مصر">Made in Egypt</h3>
+                    <p data-en="Proudly built in Egypt with global standards. Serving users worldwide." data-ar="صُنع بفخر في مصر بمعايير عالمية. نخدم المستخدمين حول العالم.">Proudly built in Egypt with global standards. Serving users worldwide.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-num">06</div>
+                    <h3 data-en="Always Improving" data-ar="تحسين مستمر">Always Improving</h3>
+                    <p data-en="Regular updates and new features based on real user feedback." data-ar="تحديثات منتظمة وميزات جديدة بناءً على ملاحظات المستخدمين الحقيقية.">Regular updates and new features based on real user feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps -->
+    <section class="apps-section" id="apps">
+        <div class="section-header reveal">
+            <div class="section-overline" data-en="Our Apps" data-ar="تطبيقاتنا">Our Apps</div>
+            <h2 class="section-title" data-en="Coming Soon to Google Play" data-ar="قريباً على Google Play">Coming Soon to Google Play</h2>
+        </div>
+        <div class="app-card reveal">
+            <div class="app-info">
+                <div class="app-badge"><span class="pulse"></span> <span data-en="In Development" data-ar="قيد التطوير">In Development</span></div>
+                <h3 data-en="Our First App is Under Development" data-ar="تطبيقنا الأول قيد التطوير">Our First App is Under Development</h3>
+                <p data-en="We're building an intelligent Android app that respects your privacy and makes your daily tasks easier. AI-powered, lightweight, and designed for real people." data-ar="نبني تطبيق أندرويد ذكي يحترم خصوصيتك ويسهّل مهامك اليومية. مدعوم بالذكاء الاصطناعي، خفيف، ومصمّم لأشخاص حقيقيين.">We're building an intelligent Android app that respects your privacy and makes your daily tasks easier. AI-powered, lightweight, and designed for real people.</p>
+                <div class="app-features">
+                    <span class="app-feature-tag"><span class="tag-dot"></span> <span data-en="AI Inside" data-ar="ذكاء اصطناعي">AI Inside</span></span>
+                    <span class="app-feature-tag"><span class="tag-dot"></span> <span data-en="Offline Ready" data-ar="بدون إنترنت">Offline Ready</span></span>
+                    <span class="app-feature-tag"><span class="tag-dot"></span> <span data-en="No Ads" data-ar="خالي من الإعلانات">No Ads</span></span>
+                </div>
+                <p class="app-notify" data-en="Get notified when we launch:" data-ar="احصل على إشعار عند الإطلاق:">Get notified when we launch:</p>
+                <form class="notify-form" id="notifyForm" aria-label="Get notified">
+                    <input type="email" class="notify-input" id="notifyEmail" placeholder="your@email.com" required autocomplete="email" data-placeholder-en="your@email.com" data-placeholder-ar="بريدك@الإلكتروني.com">
+                    <button type="submit" class="notify-submit" data-en="Notify Me" data-ar="أبلغني">Notify Me</button>
+                </form>
+                <p class="notify-hint" data-en="We'll only email you once — when the app is live." data-ar="سنراسلك مرة واحدة فقط — عند إطلاق التطبيق.">We'll only email you once — when the app is live.</p>
+            </div>
+            <div class="app-visual">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="phone-screen-content">
+                            <svg class="phone-app-icon" viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+                                <circle cx="32" cy="32" r="30" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.4"/>
+                                <circle cx="32" cy="32" r="22" fill="none" stroke="#c9a84c" stroke-width="1"/>
+                                <text x="32" y="42" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="26" fill="#c9a84c">P</text>
+                            </svg>
+                            <span data-en="COMING SOON" data-ar="قريباً">COMING SOON</span>
+                            <span class="phone-screen-sub">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div class="section-header reveal">
+                <div class="section-overline" data-en="Contact" data-ar="تواصل">Contact</div>
+                <h2 class="section-title" data-en="Let's Connect" data-ar="دعنا نتواصل">Let's Connect</h2>
+            </div>
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">&#9993;</div>
+                    <div class="contact-label" data-en="Email" data-ar="البريد الإلكتروني">Email</div>
+                    <a href="mailto:contact@pathcoreai.com">contact@pathcoreai.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">&#9654;</div>
+                    <div class="contact-label" data-en="Google Play" data-ar="Google Play">Google Play</div>
+                    <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" data-en="View Our Apps" data-ar="شاهد تطبيقاتنا">View Our Apps</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">&#127760;</div>
+                    <div class="contact-label" data-en="Website" data-ar="الموقع">Website</div>
+                    <a href="https://pathcoreai.com">pathcoreai.com</a>
+                </div>
+            </div>
+            <div class="social-row reveal">
+                <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank" class="social-link" aria-label="Google Play" title="Google Play">
+                    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.991l-2.302 2.302L6.864 2.658zm12.8 4.154l2.478 1.434c.764.441.764 1.067 0 1.508l-2.478 1.434L16.2 12l2.464-5.188z"/></svg>
+                </a>
+                <a href="mailto:contact@pathcoreai.com" class="social-link" aria-label="Email" title="Email">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+                <a href="https://pathcoreai.com" class="social-link" aria-label="Website" title="Website">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <svg viewBox="0 0 64 64" width="24" height="24" style="vertical-align: middle; margin-right: 0.4rem;" aria-hidden="true">
+                <circle cx="32" cy="32" r="30" fill="none" stroke="#c9a84c" stroke-width="2" opacity="0.4"/>
+                <circle cx="32" cy="32" r="22" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+                <text x="32" y="43" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="30" fill="#c9a84c">P</text>
+            </svg>
+            Path<span>Core</span>AI
+        </div>
+        <p>&copy; 2025 PathCoreAI. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+        <div class="footer-links">
+            <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+            <a href="mailto:contact@pathcoreai.com" data-en="Contact" data-ar="تواصل">Contact</a>
+            <a href="https://play.google.com/store/apps/dev?id=8530664071448363917" target="_blank">Google Play</a>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Language System =====
+        function setLang(lang) {
+            const html = document.documentElement;
+            html.lang = lang;
+            html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const val = el.getAttribute('data-' + lang);
+                if (el.children.length === 0 || el.hasAttribute('data-html')) {
+                    el.innerHTML = val;
+                } else if (el.childNodes.length > 0) {
+                    // For elements with mixed content, update text nodes
+                    el.childNodes.forEach(node => {
+                        if (node.nodeType === 3 && node.textContent.trim()) {
+                            // skip text nodes in parent elements with child elements that have their own translations
+                        }
+                    });
+                    // Fallback: if element has data attributes, just set innerHTML
+                    if (!el.querySelector('[data-en]')) {
+                        el.innerHTML = val;
+                    }
+                }
+            });
+
+            // Update title
+            document.title = lang === 'ar' 
+                ? 'PathCoreAI — تطبيقات ذكية للهواتف المحمولة' 
+                : 'PathCoreAI — Smart Mobile Apps';
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.content = lang === 'ar'
+                    ? 'باث كور أيه آي تبني تطبيقات ذكية للهواتف المحمولة تحل مشاكل حقيقية. تطبيقات أندرويد تحترم الخصوصية على Google Play.'
+                    : 'PathCoreAI builds intelligent mobile applications that solve real problems. Privacy-first, high-quality Android apps on Google Play.';
+            }
+
+            localStorage.setItem('pathcoreai-lang', lang);
+        }
+
+        // Load saved language
+        const savedLang = localStorage.getItem('pathcoreai-lang');
+        if (savedLang) {
+            setLang(savedLang);
+        }
+
+        // ===== Navbar Scroll =====
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== Scroll Reveal =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ===== Notification Form =====
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('notifyEmail').value;
+            if (!email) return;
+            const subject = encodeURIComponent('Notify me about PathCoreAI apps');
+            const body = encodeURIComponent('Hi PathCoreAI!\n\nPlease notify me when your first app is available on Google Play.\n\nMy email: ' + email + '\n\nThank you!');
+            window.location.href = 'mailto:contact@pathcoreai.com?subject=' + subject + '&body=' + body;
+            this.reset();
+        });
+
+        // ===== Update placeholders on lang change =====
+        const origSetLang = setLang;
+        setLang = function(lang) {
+            origSetLang(lang);
+            const emailInput = document.getElementById('notifyEmail');
+            if (emailInput) {
+                emailInput.placeholder = lang === 'ar' ? 'بريدك@الإلكتروني.com' : 'your@email.com';
+            }
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "name": "PathCoreAI",
+    "short_name": "PathCoreAI",
+    "description": "Smart Mobile Apps — Privacy-first Android applications powered by AI",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#07090f",
+    "theme_color": "#c9a84c",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["business", "productivity"],
+    "lang": "en",
+    "dir": "ltr"
+}

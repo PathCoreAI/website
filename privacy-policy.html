@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — PathCoreAI</title>
+    <meta name="description" content="PathCoreAI Privacy Policy. Learn how we collect, use, and protect your information.">
+    <meta property="og:title" content="Privacy Policy — PathCoreAI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pathcoreai.com/privacy-policy.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e4c96a;
+            --gold-dim: rgba(201, 168, 76, 0.15);
+            --sage: #6b9080;
+            --bg: #07090f;
+            --bg-elevated: #0d1117;
+            --bg-card: #12161f;
+            --text: #d4d0c8;
+            --text-bright: #f0ede6;
+            --text-muted: #7a7668;
+            --border: #1e2330;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        [dir="rtl"] body { font-family: var(--font-arabic); }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.5rem;
+            z-index: 1100;
+            display: flex;
+            background: rgba(18, 22, 31, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        [dir="rtl"] .lang-switch { right: auto; left: 1.5rem; }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.5rem 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            font-family: var(--font-body);
+        }
+        .lang-btn.active { color: var(--gold); background: var(--gold-dim); }
+        .lang-divider { width: 1px; height: 18px; background: var(--border); align-self: center; }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 9, 15, 0.92);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--gold); }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        .nav-back:hover { color: var(--gold); }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 7rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        [dir="rtl"] .page-title { font-family: var(--font-arabic); letter-spacing: 0; }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .page-intro {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        [dir="rtl"] .section h2 { font-family: var(--font-arabic); flex-direction: row-reverse; }
+
+        .section h2::before {
+            content: '';
+            width: 3px;
+            height: 1.2rem;
+            background: var(--gold);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .section p, .section li {
+            color: var(--text);
+            margin-bottom: 0.7rem;
+            line-height: 1.9;
+            font-size: 0.92rem;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        [dir="rtl"] .section ul { margin-left: 0; margin-right: 1.5rem; }
+
+        .section strong { color: var(--text-bright); }
+
+        .section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .section a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 0.5rem;
+        }
+        .footer-logo span { color: var(--gold); }
+
+        footer p { color: var(--text-muted); font-size: 0.8rem; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.5rem; }
+            .content { padding: 6rem 1.2rem 3rem; }
+            .page-title { font-size: 2rem; }
+            .lang-switch { top: auto; bottom: 1rem; right: 1rem; }
+            [dir="rtl"] .lang-switch { right: auto; left: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <div class="lang-divider"></div>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">عربي</button>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Path<span>Core</span>AI</a>
+        <a href="index.html" class="nav-back" data-en="← Back to Home" data-ar="→ الرجوع للرئيسية">← Back to Home</a>
+    </nav>
+
+    <main class="content">
+        <header class="page-header">
+            <h1 class="page-title" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</h1>
+            <p class="page-subtitle" data-en="Last Updated: April 4, 2026" data-ar="آخر تحديث: ٤ أبريل ٢٠٢٦">Last Updated: April 4, 2026</p>
+        </header>
+
+        <p class="page-intro" data-en="Your privacy matters to us. This Privacy Policy explains how PathCoreAI (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses, and protects your information when you use our mobile applications and services." data-ar="خصوصيتك تهمنا. توضح سياسة الخصوصية هذه كيف تقوم PathCoreAI (&quot;نحن&quot;) بجمع معلوماتك واستخدامها وحمايتها عند استخدام تطبيقاتنا وخدماتنا.">Your privacy matters to us. This Privacy Policy explains how PathCoreAI ("we", "us", or "our") collects, uses, and protects your information when you use our mobile applications and services.</p>
+
+        <div class="section">
+            <h2 data-en="1. Information We Collect" data-ar="١. المعلومات التي نجمعها">1. Information We Collect</h2>
+            <p data-en="We may collect the following types of information:" data-ar="قد نجمع الأنواع التالية من المعلومات:">We may collect the following types of information:</p>
+            <ul>
+                <li data-en="&lt;strong&gt;Information you provide:&lt;/strong&gt; Such as your name, email address, or other details when you contact us or create an account." data-ar="&lt;strong&gt;المعلومات التي تقدمها:&lt;/strong&gt; مثل اسمك وبريدك الإلكتروني أو تفاصيل أخرى عند التواصل معنا أو إنشاء حساب."><strong>Information you provide:</strong> Such as your name, email address, or other details when you contact us or create an account.</li>
+                <li data-en="&lt;strong&gt;Usage data:&lt;/strong&gt; Information about how you use our apps, including pages visited, features used, and time spent." data-ar="&lt;strong&gt;بيانات الاستخدام:&lt;/strong&gt; معلومات حول كيفية استخدامك لتطبيقاتنا، بما في ذلك الصفحات التي تمت زيارتها والميزات المستخدمة والوقت المستغرق."><strong>Usage data:</strong> Information about how you use our apps, including pages visited, features used, and time spent.</li>
+                <li data-en="&lt;strong&gt;Device information:&lt;/strong&gt; Device type, operating system, unique device identifiers, and mobile network information." data-ar="&lt;strong&gt;معلومات الجهاز:&lt;/strong&gt; نوع الجهاز ونظام التشغيل ومعرّفات الجهاز الفريدة ومعلومات شبكة الهاتف."><strong>Device information:</strong> Device type, operating system, unique device identifiers, and mobile network information.</li>
+                <li data-en="&lt;strong&gt;Log data:&lt;/strong&gt; IP address, access times, app crashes, and system activity." data-ar="&lt;strong&gt;بيانات السجل:&lt;/strong&gt; عنوان IP وأوقات الوصول وأعطال التطبيق ونشاط النظام."><strong>Log data:</strong> IP address, access times, app crashes, and system activity.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="2. How We Use Your Information" data-ar="٢. كيف نستخدم معلوماتك">2. How We Use Your Information</h2>
+            <p data-en="We use the information we collect to:" data-ar="نستخدم المعلومات التي نجمعها من أجل:">We use the information we collect to:</p>
+            <ul>
+                <li data-en="Provide, maintain, and improve our applications and services." data-ar="تقديم وصيانة وتحسين تطبيقاتنا وخدماتنا.">Provide, maintain, and improve our applications and services.</li>
+                <li data-en="Respond to your comments, questions, and support requests." data-ar="الرد على تعليقاتك وأسئلتك وطلبات الدعم.">Respond to your comments, questions, and support requests.</li>
+                <li data-en="Send you technical notices, updates, and security alerts." data-ar="إرسال إشعارات تقنية وتحديثات وتنبيهات أمنية.">Send you technical notices, updates, and security alerts.</li>
+                <li data-en="Monitor and analyze trends, usage, and activities." data-ar="مراقبة وتحليل الاتجاهات والاستخدام والأنشطة.">Monitor and analyze trends, usage, and activities.</li>
+                <li data-en="Detect, investigate, and prevent fraudulent or unauthorized activities." data-ar="اكتشاف والتحقيق في ومنع الأنشطة الاحتيالية أو غير المصرح بها.">Detect, investigate, and prevent fraudulent or unauthorized activities.</li>
+                <li data-en="Personalize and improve your experience." data-ar="تخصيص وتحسين تجربتك.">Personalize and improve your experience.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="3. Information Sharing" data-ar="٣. مشاركة المعلومات">3. Information Sharing</h2>
+            <p data-en="We do not sell, trade, or rent your personal information to third parties. We may share information only in the following circumstances:" data-ar="لا نبيع أو نتاجر أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك المعلومات فقط في الحالات التالية:">We do not sell, trade, or rent your personal information to third parties. We may share information only in the following circumstances:</p>
+            <ul>
+                <li data-en="&lt;strong&gt;With your consent:&lt;/strong&gt; When you have given us explicit permission." data-ar="&lt;strong&gt;بموافقتك:&lt;/strong&gt; عندما تمنحنا إذناً صريحاً."><strong>With your consent:</strong> When you have given us explicit permission.</li>
+                <li data-en="&lt;strong&gt;Service providers:&lt;/strong&gt; With trusted third-party services that help us operate our apps, under strict data protection agreements." data-ar="&lt;strong&gt;مقدمو الخدمات:&lt;/strong&gt; مع خدمات طرف ثالث موثوقة تساعدنا في تشغيل تطبيقاتنا، بموجب اتفاقيات حماية بيانات صارمة."><strong>Service providers:</strong> With trusted third-party services that help us operate our apps, under strict data protection agreements.</li>
+                <li data-en="&lt;strong&gt;Legal requirements:&lt;/strong&gt; When required by law, regulation, legal process, or governmental request." data-ar="&lt;strong&gt;المتطلبات القانونية:&lt;/strong&gt; عندما يتطلب الأمر بموجب القانون أو اللوائح أو الإجراءات القانونية أو الطلبات الحكومية."><strong>Legal requirements:</strong> When required by law, regulation, legal process, or governmental request.</li>
+                <li data-en="&lt;strong&gt;Safety:&lt;/strong&gt; To protect the rights, property, or safety of PathCoreAI, our users, or the public." data-ar="&lt;strong&gt;السلامة:&lt;/strong&gt; لحماية حقوق أو ممتلكات أو سلامة PathCoreAI أو مستخدمينا أو الجمهور."><strong>Safety:</strong> To protect the rights, property, or safety of PathCoreAI, our users, or the public.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="4. Third-Party Services" data-ar="٤. خدمات الطرف الثالث">4. Third-Party Services</h2>
+            <p data-en="Our apps may use third-party services that collect information. These services have their own privacy policies:" data-ar="قد تستخدم تطبيقاتنا خدمات طرف ثالث تجمع معلومات. هذه الخدمات لها سياسات خصوصية خاصة بها:">Our apps may use third-party services that collect information. These services have their own privacy policies:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Analytics, Crashlytics)</a></li>
+                <li><a href="https://www.google.com/policies/privacy/partners/" target="_blank">AdMob (Google Ads)</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="5. Data Security" data-ar="٥. أمان البيانات">5. Data Security</h2>
+            <p data-en="We take reasonable measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security." data-ar="نتخذ تدابير معقولة لحماية معلوماتك من الوصول غير المصرح به أو التعديل أو الإفصاح أو التدمير. ومع ذلك، لا توجد طريقة نقل عبر الإنترنت أو تخزين إلكتروني آمنة بنسبة ١٠٠٪، ولا يمكننا ضمان الأمان المطلق.">We take reasonable measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="6. Data Retention" data-ar="٦. الاحتفاظ بالبيانات">6. Data Retention</h2>
+            <p data-en="We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements." data-ar="نحتفظ بمعلوماتك الشخصية فقط طالما كان ذلك ضرورياً لتحقيق الأغراض التي جُمعت من أجلها، بما في ذلك تلبية المتطلبات القانونية أو المحاسبية أو متطلبات الإبلاغ.">We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="7. Children's Privacy" data-ar="٧. خصوصية الأطفال">7. Children's Privacy</h2>
+            <p data-en="Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it immediately. If you are a parent or guardian and believe your child has provided us with personal information, please contact us." data-ar="خدماتنا غير موجهة للأطفال دون سن ١٣ عاماً. لا نجمع عن قصد معلومات شخصية من أطفال دون ١٣ عاماً. إذا اكتشفنا أن طفلاً دون ١٣ عاماً قد زوّدنا بمعلومات شخصية، سنحذفها فوراً. إذا كنت والداً أو وصياً وتعتقد أن طفلك قد زوّدنا بمعلومات شخصية، يرجى التواصل معنا.">Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it immediately. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="8. Your Rights" data-ar="٨. حقوقك">8. Your Rights</h2>
+            <p data-en="You have the right to:" data-ar="لديك الحق في:">You have the right to:</p>
+            <ul>
+                <li data-en="Access the personal information we hold about you." data-ar="الوصول إلى المعلومات الشخصية التي نحتفظ بها عنك.">Access the personal information we hold about you.</li>
+                <li data-en="Request correction of inaccurate information." data-ar="طلب تصحيح المعلومات غير الدقيقة.">Request correction of inaccurate information.</li>
+                <li data-en="Request deletion of your personal information." data-ar="طلب حذف معلوماتك الشخصية.">Request deletion of your personal information.</li>
+                <li data-en="Opt out of marketing communications." data-ar="إلغاء الاشتراك في الاتصالات التسويقية.">Opt out of marketing communications.</li>
+                <li data-en="Withdraw consent at any time." data-ar="سحب الموافقة في أي وقت.">Withdraw consent at any time.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 data-en="9. Changes to This Policy" data-ar="٩. التغييرات على هذه السياسة">9. Changes to This Policy</h2>
+            <p data-en="We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. We encourage you to review this Privacy Policy periodically." data-ar="قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنخطرك بأي تغييرات عن طريق نشر سياسة الخصوصية الجديدة على هذه الصفحة وتحديث تاريخ &quot;آخر تحديث&quot;. نشجعك على مراجعة سياسة الخصوصية هذه بشكل دوري.">We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="10. Contact Us" data-ar="١٠. تواصل معنا">10. Contact Us</h2>
+            <p data-en="If you have any questions or concerns about this Privacy Policy, please contact us:" data-ar="إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية هذه، يرجى التواصل معنا:">If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+            <p><strong>PathCoreAI</strong></p>
+            <p><span data-en="Email:" data-ar="البريد الإلكتروني:">Email:</span> <a href="mailto:contact@pathcoreai.com">contact@pathcoreai.com</a></p>
+            <p><span data-en="Website:" data-ar="الموقع:">Website:</span> <a href="https://pathcoreai.com">pathcoreai.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">Path<span>Core</span>AI</div>
+        <p>&copy; 2026 PathCoreAI. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+        <div class="footer-links">
+            <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                if (!el.querySelector('[data-en]')) el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.title = lang === 'ar' ? 'سياسة الخصوصية — PathCoreAI' : 'Privacy Policy — PathCoreAI';
+            localStorage.setItem('pathcoreai-lang', lang);
+        }
+        const saved = localStorage.getItem('pathcoreai-lang');
+        if (saved) setLang(saved);
+    </script>
+
+</body>
+</html>
